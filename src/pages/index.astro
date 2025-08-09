@@ -1,0 +1,17 @@
+---
+import "../assets/css/global.css";
+import Layout from '../layouts/Layout.astro';
+import Widgets from '../components/Widgets.astro'
+import Content from '../components/Content.astro'
+---
+
+<Layout>
+	<div class="flex">
+		<div class="w-[35%]">
+			<Content />
+		</div>
+		<div class="w-[65%] h-screen bg-gray-200">
+			<Widgets />
+		</div>
+	</div>
+</Layout>
