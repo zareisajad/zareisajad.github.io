@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Shabnam";
+    src: url("/fonts/Shabnam.woff2") format("woff2"),
+        url("/fonts/Shabnam.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Shabnam";
+    margin: 0;
+    padding: 0;
+}
+
+.logo h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+section {
+    width: 650px;
+    margin: 0 auto;
+}
+
+header .menu {
+    display: flex;
+    gap: 15px;
+    width: 50%;
+    justify-content: start;
+    flex-direction: row-reverse;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 1px rgb(219, 219, 219) solid;
+}

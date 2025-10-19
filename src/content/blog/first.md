@@ -1,6 +1,11 @@
 +++
-title = "my first post"
-date = 2025-10-18
+title = "شروع وبلاگ با zola"
+date = 2025-10-19
 +++
 
-### This is the first title
+### ورژن جدید وبلاگ
+وبلاگ جدیدم رو با [zola](https://www.getzola.org/) درست کردیم و پروسه ساختش رو به صورت ویدیو داخل اینترنت منتشر میکنم.
+
+در آینده تغییرات بیشتری اعمال خواهیم کرد.
+
+میتونید از طریق [گیت هاب](https://github.com/zareisajad/zareisajad.github.io) در توسعه وبلاگ مشارکت کنید.
