@@ -22,6 +22,10 @@ body {
     font-size: 18px;
     margin: 0;
 }
+.logo a {
+    text-decoration: none;
+    color: black;
+}
 
 section {
     width: 650px;
@@ -40,7 +44,7 @@ header .menu {
     text-decoration: none;
 }
 
-header {
+header{
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
@@ -53,8 +57,28 @@ header {
     gap: 20px;
     flex-direction: row;
     padding: 20px 0;
+    justify-content: space-between;
 }
 .flex-section .right {
     width: 70%;
-    
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    border-top: 1px rgb(219, 219, 219) solid;
+    margin-top: 50px;
+    color: rgb(163, 163, 163);
+    font-size: 12px;
+}
+
+footer a, .date {
+    color: rgb(163, 163, 163);
+    text-decoration: none;
+}
+
+.title {
+    font-size: 22px;
+    margin: 0;
 }
