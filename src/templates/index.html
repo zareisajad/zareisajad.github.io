@@ -11,21 +11,32 @@
         <a href="mailto:zareisajad@protonmail.com">zareisajad@protonmail.com</a>
         <br>
     </div>
-    <div class="right"><img src="/images/me.webp" alt="author avatar"></div>
+    <div class="right"><img class="me" src="/images/me.webp" alt="author avatar"></div>
 </div>
-<h5>آخرین پست ها:</h5>
-<ul> 
+
+<div>
+
+<ul class="list-section" style="margin-bottom: 20px;">
+  <span>وبلاگ</span>
     {% set blog_section = get_section(path="blog/_index.md") %}
-  {% for page in blog_section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
+    {% for page in blog_section.pages %}
+    <li>
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+    </li>
+    {% endfor %}
 </ul>
-<br>
-<h5>آخرین یادداشت ها:</h5>
-<ul> 
+
+<ul class="list-section">
+  <span>یادداشت</span>
     {% set notes_section = get_section(path="notes/_index.md") %}
-  {% for page in notes_section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
+    {% for page in notes_section.pages %}
+    <li>
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+    </li>
+    {% endfor %}
 </ul>
+</div>
+
 {% endblock content %}

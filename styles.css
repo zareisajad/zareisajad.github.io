@@ -11,6 +11,8 @@ img {
     max-width: 100%;
 }
 
+
+
 body {
     font-family: "Shabnam";
     margin: 0;
@@ -22,6 +24,7 @@ body {
     font-size: 18px;
     margin: 0;
 }
+
 .logo a {
     text-decoration: none;
     color: black;
@@ -30,7 +33,9 @@ body {
 section {
     width: 650px;
     margin: 0 auto;
+    padding: 0 15px; 
 }
+
 
 header .menu {
     display: flex;
@@ -44,7 +49,7 @@ header .menu {
     text-decoration: none;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
@@ -54,31 +59,109 @@ header{
 
 .flex-section {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-direction: row;
     padding: 20px 0;
     justify-content: space-between;
 }
+
 .flex-section .right {
-    width: 70%;
+    width: 50%;
 }
+
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Courier New', Courier, monospace;
+    gap: 15px;
     border-top: 1px rgb(219, 219, 219) solid;
     margin-top: 50px;
     color: rgb(163, 163, 163);
     font-size: 12px;
+    padding: 15px 0;
 }
 
-footer a, .date {
-    color: rgb(163, 163, 163);
+footer a {  
     text-decoration: none;
 }
 
 .title {
     font-size: 22px;
     margin: 0;
+}
+
+.list-section {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.list-section li a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+}
+
+/* date on the left */
+.list-section .date {
+    padding-top: 3px ;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+
+    section {
+        width: 90%;
+    }
+
+    .right .me {
+        display: none;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+    .flex-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    header .menu {
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+
+
+
 }
