@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://zareisajad.github.io/</loc>
+        <loc>https://sajadzarei.ir/</loc>
     </url>
     <url>
-        <loc>https://zareisajad.github.io/blog/</loc>
+        <loc>https://sajadzarei.ir/blog/</loc>
     </url>
     <url>
-        <loc>https://zareisajad.github.io/blog/hello/</loc>
+        <loc>https://sajadzarei.ir/blog/hello/</loc>
         <lastmod>2025-10-19</lastmod>
     </url>
     <url>
-        <loc>https://zareisajad.github.io/notes/</loc>
+        <loc>https://sajadzarei.ir/notes/</loc>
     </url>
     <url>
-        <loc>https://zareisajad.github.io/notes/1/</loc>
+        <loc>https://sajadzarei.ir/notes/1/</loc>
         <lastmod>2025-10-21</lastmod>
+    </url>
+    <url>
+        <loc>https://sajadzarei.ir/reading/</loc>
+    </url>
+    <url>
+        <loc>https://sajadzarei.ir/reading/a0/</loc>
+        <lastmod>1404-09-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sajadzarei.ir/reading/icheman/</loc>
+        <lastmod>1404-09-23</lastmod>
+    </url>
+    <url>
+        <loc>https://sajadzarei.ir/reading/meditations/</loc>
+        <lastmod>2025-10-21</lastmod>
+    </url>
+    <url>
+        <loc>https://sajadzarei.ir/type/</loc>
     </url>
 </urlset>

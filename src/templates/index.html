@@ -1,42 +1,100 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="flex-section">
-    <div class="left">
-        سجاد هستم، یه برنامه نویس که روزامو با لپ‌تاپم، کتاب، موسیقی، دوچرخه سواری و Milo میگذرونم.
-        <br>
-        اخیرا شروع به یادگیری مفاهیم سیستم عامل و طراحی سیستم کردم و دوست دارم بیشتر این حوزه رو یاد بگیرم. 
-        ساخت هرچیز باحالی که هدف اولش میلیاردر شدن نباشه برام جذابه. <br>
-        <br>
-        <a href="mailto:zareisajad@protonmail.com">zareisajad@protonmail.com</a>
-        <br>
-    </div>
-    <div class="right"><img class="me" src="/images/me.webp" alt="author avatar"></div>
+
+
+
+
+<div> 
+  <p>سلام من سجادم.</p>
+  <p>
+یه برنامه نویس علاقه مند به زبان انگلیسی، کتاب، کامپیوتر، دوچرخه سواری و بقیه چیزهایی که اینجا ازشون مینویسم.
+  </p>
+    <p>در این لینک‌ها میتونید منو پیدا کنید:
+    <small>
+
+    <a href="mailto:zareisajad98@gmail.com">gmail</a> -
+    <a href="https://youtube.com/@zareisajad98">youtue</a> 
+    <a href="https://instagram.com/zareisajad98">instagram</a>
+    </small>
+
+  </p>
 </div>
 
-<div>
+<div class="d-flex justify-content-between align-items-cente mb-2">
+  <a href="/reading"><h6>مطالعه ←</h6></a>
+</div>
 
-<ul class="list-section" style="margin-bottom: 20px;">
-  <span>وبلاگ</span>
+
+<div class="d-flex flex-column mb-5 gap-2">  
+    {% set blog_section = get_section(path="reading/_index.md") %}
+    {% for page in blog_section.pages | slice(end=5) %}
+
+
+  <div class="d-flex justify-content-between  align-items-center flex-wrap gap-1">
+        <a class="text-decoration-none" href="{{ page.permalink | safe }}">
+          {{ page.title }}
+        </a>
+
+        <div class="d-flex flex-row-reverse align-items-end gap-2">
+
+          {% if page.extra.read %}
+            <span dir="ltr" class="text-warning">
+              {% for i in range(end=5) %}
+                {% if i < page.extra.rate %}★{% else %}☆{% endif %}
+              {% endfor %}
+            </span>
+
+            <small class="font-serif">
+              {{ page.date | date(format="%Y-%m-%d") }}
+            </small>
+
+          {% elif not page.extra.pending %}
+            <small class="text-success">(در حال خواندن)</small>
+          {% endif %}
+
+          <small>
+            {{ page.extra.author | default(value="") }}
+          </small>
+
+        </div>
+      </div>
+
+    {% endfor %}
+</div>
+
+<div class="d-flex justify-content-between align-items-cente mb-2">
+  <a href="/blog"><h6>وبلاگ ←</h6></a>
+</div>
+
+
+<div class="d-flex flex-column gap-3 mb-5 gap-2">  
     {% set blog_section = get_section(path="blog/_index.md") %}
     {% for page in blog_section.pages %}
-    <li>
+    <div class="d-flex justify-content-between align-items-center">
         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
         <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-    </li>
+    </div>
     {% endfor %}
-</ul>
-
-<ul class="list-section">
-  <span>یادداشت</span>
-    {% set notes_section = get_section(path="notes/_index.md") %}
-    {% for page in notes_section.pages %}
-    <li>
-        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-    </li>
-    {% endfor %}
-</ul>
 </div>
+
+<div class="d-flex justify-content-between align-items-cente mb-2">
+  <a href="/notes"><h6>یادداشت ←</h6></a>
+</div>
+
+
+<div class="d-flex flex-column gap-3 gap-2">  
+    {% set blog_section = get_section(path="notes/_index.md") %}
+    {% for page in blog_section.pages %}
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
 
 {% endblock content %}

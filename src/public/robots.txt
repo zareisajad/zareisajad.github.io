@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://zareisajad.github.io/sitemap.xml
+Sitemap: https://sajadzarei.ir/sitemap.xml
