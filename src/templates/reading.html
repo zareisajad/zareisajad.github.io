@@ -9,7 +9,7 @@
   {% for page in section.pages %}
     {% if page.extra.type == "book" %}
 
-      <div class="d-flex justify-content-between  align-items-center flex-wrap gap-1">
+     <div class="d-flex justify-content-between  align-items-center flex-wrap gap-1">
         <a class="text-decoration-none" href="{{ page.permalink | safe }}">
           {{ page.title }}
         </a>
@@ -17,15 +17,13 @@
         <div class="d-flex flex-row-reverse align-items-end gap-2">
 
           {% if page.extra.read %}
-            <!-- Stars -->
             <span dir="ltr" class="text-warning">
               {% for i in range(end=5) %}
                 {% if i < page.extra.rate %}★{% else %}☆{% endif %}
               {% endfor %}
             </span>
 
-            <!-- Date -->
-            <small class="text-muted font-serif">
+            <small class="font-serif">
               {{ page.date | date(format="%Y-%m-%d") }}
             </small>
 
@@ -33,14 +31,13 @@
             <small class="text-success">(در حال خواندن)</small>
           {% endif %}
 
-          <!-- Author always -->
-          <small class="text-muted ">
+          <small>
             {{ page.extra.author | default(value="") }}
           </small>
 
         </div>
       </div>
-
+ 
     {% endif %}
   {% endfor %}
 </div>
@@ -56,7 +53,7 @@
           {{ page.title }}
         </a>
 
-        <div class="d-flex flex-row-reverse align-items-end gap-2 text-muted">
+        <div class="d-flex flex-row-reverse align-items-end gap-2">
 
           {% if page.extra.read %}
             <span class="text-warning">
