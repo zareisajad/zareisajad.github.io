@@ -8,48 +8,74 @@
 <div class="d-flex flex-column gap-2">
   {% for page in section.pages %}
     {% if page.extra.type == "book" %}
-
-     <div class="d-flex justify-content-between  align-items-center flex-wrap gap-1">
+      {% if page.extra.language == "fa" %}
+     <div class="d-flex justify-content-between align-items-center flex-wrap gap-1">
         <a class="text-decoration-none" href="{{ page.permalink | safe }}">
           {{ page.title }}
         </a>
-
         <div class="d-flex flex-row-reverse align-items-end gap-2">
-
           {% if page.extra.read %}
-            <span dir="ltr" class="text-warning">
+            <span dir="ltr" class="text-warning font-serif">
               {% for i in range(end=5) %}
                 {% if i < page.extra.rate %}★{% else %}☆{% endif %}
               {% endfor %}
             </span>
-
             <small class="font-serif">
               {{ page.date | date(format="%Y-%m-%d") }}
             </small>
-
           {% elif not page.extra.pending %}
             <small class="text-success">(در حال خواندن)</small>
           {% endif %}
-
           <small>
             {{ page.extra.author | default(value="") }}
           </small>
-
         </div>
       </div>
- 
+      {% endif %}
     {% endif %}
   {% endfor %}
 </div>
 
-<!-- Articles -->
+
+<small class="mt-3 mb-2 d-block text-secondary">انگلیسی:</small>
+<div dir="ltr" class="d-flex flex-column gap-2">
+  {% for page in section.pages %}
+    {% if page.extra.type == "book" %}
+      {% if page.extra.language == "en" %}
+         <div class="d-flex justify-content-between  align-items-center flex-wrap gap-1">
+            <a class="text-decoration-none font-serif text-capitalize" href="{{ page.permalink | safe }}">
+              {{ page.title }}
+            </a>
+            <div class="d-flex flex-row-reverse align-items-end gap-2">
+              {% if page.extra.read %}
+                <span dir="ltr" class="text-warning">
+                  {% for i in range(end=5) %}
+                    {% if i < page.extra.rate %}★{% else %}☆{% endif %}
+                  {% endfor %}
+                </span>
+                <small class="font-serif">
+                  {{ page.date | date(format="%Y-%m-%d") }}
+                </small>
+              {% elif not page.extra.pending %}
+                <small class="text-success">currently reading</small>
+              {% endif %}
+              <small class="text-capitalize">
+                {{ page.extra.author | default(value="") }}
+              </small>
+            </div>
+          </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
 <h6 class="my-4">مقالات:</h6>
 <div dir="ltr" class="d-flex flex-column gap-2 font-serif">
   {% for page in section.pages %}
     {% if page.extra.type == "article" %}
 
       <div class="d-flex justify-content-between align-items-center flex-wrap gap-1">
-        <a class="text-decoration-none" href="{{ page.permalink | safe }}">
+        <a class="text-decoration-none text-capitalize" href="{{ page.permalink | safe }}">
           {{ page.title }}
         </a>
 
@@ -68,7 +94,7 @@
 
           {% endif %}
 
-          <small>
+          <small class="text-capitalize" >
             {{ page.extra.author | default(value="") }}
           </small>
 
