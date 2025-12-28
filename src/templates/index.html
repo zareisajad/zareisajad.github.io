@@ -31,10 +31,15 @@
 
 
   <div class="d-flex justify-content-between  align-items-center flex-wrap gap-1">
-        <a class="text-decoration-none text-capitalize" href="{{ page.permalink | safe }}">
+    {% if page.extra.type == "article" %}
+       <a class="text-decoration-none text-capitalize" href="{{ page.extra.link | safe }}">
+          {{ page.title }}
+        </a> 
+    {% else %}
+ <a class="text-decoration-none text-capitalize" href="{{ page.permalink | safe }}">
           {{ page.title }}
         </a>
-
+    {% endif %}
         <div class="d-flex flex-row-reverse align-items-end gap-2">
 
           {% if page.extra.read %}

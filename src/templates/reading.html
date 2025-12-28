@@ -75,7 +75,7 @@
     {% if page.extra.type == "article" %}
 
       <div class="d-flex justify-content-between align-items-center flex-wrap gap-1">
-        <a class="text-decoration-none text-capitalize" href="{{ page.permalink | safe }}">
+        <a class="text-decoration-none text-capitalize" href="{{ page.extra.link | safe }}">
           {{ page.title }}
         </a>
 
