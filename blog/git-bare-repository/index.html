@@ -57,9 +57,9 @@
 <p>اینو به zshrc. اضافه میکنیم</p>
 <pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fabd2f;">alias </span><span style="color:#8ec07c;">dtf</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&#39;/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME&#39;
 </span></code></pre>
-<p>الان مثلا میتونیم بگیم<code>dtf status</code> و بقیه کامندها.</p>
+<p>الان مثلا میتونیم بگیم <code>dtf status</code> و بقیه کامندها.</p>
 <h5 id="bh-gyt-mygym-bqyh-fyl-hrw-bykhyl-shw">به گیت میگیم بقیه فایل هارو بیخیال شو</h5>
-<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">d‍tfiles config --local status.showUntrackedFiles no‍‍‍‍‍
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">dtf config --local status.showUntrackedFiles no‍‍‍‍‍
 </span></code></pre>
 <h5 id="fyl-hy-khnfyg-rw-dfh-mykhnym">فایل های کانفیگ رو اضافه میکنیم</h5>
 <pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">dtf add ~/.config/i3
@@ -69,9 +69,9 @@
 </span><span style="color:#fdf4c1;">dtf commit -m </span><span style="color:#b8bb26;">&quot;Initial dotfiles&quot;
 </span></code></pre>
 <h5 id="w-dr-akhr-push-khnyd">و در آخر push کنید</h5>
-<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">dotfiles remote add origin git@github.com:YOUR_USERNAME/dotfiles.git
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">dtf remote add origin git@github.com:YOUR_USERNAME/dotfiles.git
 </span><span>
-</span><span style="color:#fdf4c1;">dotfiles push -u origin master
+</span><span style="color:#fdf4c1;">dtf push -u origin master
 </span></code></pre>
 <p>از اونجایی که من نمیخواستم هر دفعه <code>dtf commit</code> انجام بدم یه alias دیگه هم اضافه کردم:</p>
 <pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fabd2f;">alias </span><span style="color:#8ec07c;">dtfpush</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&#39;dtf add -f ~/.zshrc ~/.config/i3 ~/.config/nvim &amp;&amp; dtf commit -m &quot;update dotfiles&quot; &amp;&amp; dtf push&#39;
@@ -81,7 +81,7 @@
 <p>الان گیت از HOME$ تمام تغییراتی که اعمال میشه رو زیر نظر داره و فقط با یه کامند ساده از هرجا میتونید commit کنید و تغییراتو push کنید توی گیت هاب.</p>
 <p>و از اونجایی که من زیاد مدام در حال تغییر distro هستم برای اینکه توی یک سیستم تازه نصب شده تمام ابزارهایی که برای این کانفیگ ها نیاز به نصب دارن رو نصب کنم یه اسکریپت ساده هم اضافه کردم:</p>
 <p>bootstrap.sh:</p>
-<pre data-lang="bash" style="background-color:#282828;color:#fdf4c1aa;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="font-style:italic;color:#928374;">#!/usr/bin/env bash
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="font-style:italic;color:#928374;">#!/usr/bin/env bash
 </span><span>
 </span><span style="color:#fdf4c1;">sudo pacman -Syu --needed --noconfirm
 </span><span>

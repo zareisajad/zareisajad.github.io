@@ -28,12 +28,12 @@ git clone --bare https://github.com/YOUR_USERNAME/dotfiles.git $HOME/.dotfiles
 alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 ```
 
-الان مثلا میتونیم بگیم`dtf status` و بقیه کامندها.
+الان مثلا میتونیم بگیم `dtf status` و بقیه کامندها.
 
 ##### به گیت میگیم بقیه فایل هارو بیخیال شو
 
 ```zsh
-d‍tfiles config --local status.showUntrackedFiles no‍‍‍‍‍
+dtf config --local status.showUntrackedFiles no‍‍‍‍‍
 ```
 ##### فایل های کانفیگ رو اضافه میکنیم
 
@@ -46,9 +46,9 @@ dtf commit -m "Initial dotfiles"
 ```
 ##### و در آخر push کنید
 ```zsh
-dotfiles remote add origin git@github.com:YOUR_USERNAME/dotfiles.git
+dtf remote add origin git@github.com:YOUR_USERNAME/dotfiles.git
 
-dotfiles push -u origin master
+dtf push -u origin master
 ```
 
 از اونجایی که من نمیخواستم هر دفعه `dtf commit` انجام بدم یه alias دیگه هم اضافه کردم:
@@ -66,7 +66,7 @@ alias dtfpush='dtf add -f ~/.zshrc ~/.config/i3 ~/.config/nvim && dtf commit -m 
 و از اونجایی که من زیاد مدام در حال تغییر distro هستم برای اینکه توی یک سیستم تازه نصب شده تمام ابزارهایی که برای این کانفیگ ها نیاز به نصب دارن رو نصب کنم یه اسکریپت ساده هم اضافه کردم:
 
 bootstrap.sh:
-```bash
+```zsh
 #!/usr/bin/env bash
 
 sudo pacman -Syu --needed --noconfirm
@@ -80,3 +80,4 @@ sudo pacman -S --needed \
     
 ```
 این اسکریپت رو اضافه کردم به `dotfiles/scripts` و با ران کردن این اسکریپت دیگه نیازی نیست تمام ابزارهارو تکی نصب کنیم.
+
