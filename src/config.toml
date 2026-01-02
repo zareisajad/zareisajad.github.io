@@ -11,4 +11,5 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-
+highlight_theme = "gruvbox-dark"
+render_emoji = true

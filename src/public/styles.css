@@ -7,6 +7,14 @@
     font-display: swap;
 }
 
+pre {
+  direction: ltr;
+  background: #282828 !important; 
+  padding: 10px;
+  font-size: 14px;
+  font-family: monospace !important;
+}
+
 img {
     max-width: 100%;
 }
@@ -49,11 +57,30 @@ body {
 h2,h3,h4,h5,h6 {
   margin: 17px 0px !important;
 }
-h2 {font-size: 20px !important;}
-h3 {font-size: 18px !important;}
-h4 {font-size: 15px !important;}
-h5 {font-size: 12px !important;}
 
+h2 {
+  font-size: 24px !important;
+}
+
+h3 {
+  font-size: 20px !important;
+}
+
+h4 {
+  font-size: 16px !important;
+}
+
+h5 {
+  font-size: 15px !important;
+}
+
+h6 {
+  font-size: 14px !important;
+}
+
+p {
+  font-size: 15px !important;
+}
 section {
     width: 650px;
     margin: 0 auto;

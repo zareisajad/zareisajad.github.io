@@ -43,59 +43,54 @@
 
 <div class="page-content">
 
-  <p>تقریبا ۷-۸ سالی میشه که با لینوکس آشنا شدم و توی این مدت با اینکه از مک و ویندوز هم استفاده کردم همچنان ترجیح میدم با لینوکس بمونم.</p>
-<p>یکی از تفریحاتم توی این چندسال نصب کردن و امتحان کردن distro های مختلف با دسکتاپ های مختلف بوده! و در کنار اون امتحان کردن ادیتور ها و wm های مختلف.
-اصلا همین تنوعش برام خیلی جذابه.</p>
-<p>در ستایش لینوکس بعدا مفصل میشه. خلاصه اینکه اخیرا به صورت کامل کوچ کردم روی i3 و این جرئتو به خودم دادم بعد از اینکه به neovim کوچ کردم.</p>
-<p>الان هر روز به کانفیگ ها ور میرم و برای ذخیره کردنشون چالش داشتم.
+  <p>الان هر روز به کانفیگ ها ور میرم و برای ذخیره کردنشون چالش داشتم.
 مدتی هست که یادداشت هامو تو یک ریپوی خصوصی با obsidian ذخیره میکنم و خیلی سیستم خوبیه.
 این کارو برای کانفیگ ها امتحان کردم ولی مشکلش اینه که کار سختیه هر دفعه تغییرات جدید رو کپی کنی توی فایل هایی که روی گیت هست.</p>
-<p>برای حل این مشکل باز هم قهرمان داستان : git وارد می شود.</p>
+<p>برای حل این مشکل باز هم قهرمان داستان git وارد می شود با چیزی به اسم bare repository:</p>
 <h5 id="ynjwry-myszymsh">اینجوری میسازیمش:</h5>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">git</span><span> init</span><span style="color:#bf616a;"> --bare </span><span>$</span><span style="color:#bf616a;">HOME</span><span>/.dotfiles
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">git init --bare $HOME/.dotfiles
 </span></code></pre>
-<p>و یا میتونید ریپوزیتوری موجود رو به صورت bare توی سیستم clone کنید:
-‍‍‍```</p>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">git</span><span> clone</span><span style="color:#bf616a;"> --bare</span><span> https://github.com/YOUR_USERNAME/dotfiles.git $</span><span style="color:#bf616a;">HOME</span><span>/.dotfiles
+<p>و یا میتونید ریپوزیتوری موجود رو به صورت bare توی سیستم clone کنید:</p>
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">git clone --bare https://github.com/YOUR_USERNAME/dotfiles.git $HOME/.dotfiles
 </span></code></pre>
 <h5 id="yh-alias-brsh-bszyd">یه alias براش بسازید</h5>
 <p>اینو به zshrc. اضافه میکنیم</p>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#96b5b4;">alias </span><span style="color:#8fa1b3;">dtf</span><span>=&#39;</span><span style="color:#a3be8c;">/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME</span><span>&#39;
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fabd2f;">alias </span><span style="color:#8ec07c;">dtf</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&#39;/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME&#39;
 </span></code></pre>
 <p>الان مثلا میتونیم بگیم<code>dtf status</code> و بقیه کامندها.</p>
 <h5 id="bh-gyt-mygym-bqyh-fyl-hrw-bykhyl-shw">به گیت میگیم بقیه فایل هارو بیخیال شو</h5>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">d‍tfiles</span><span> config</span><span style="color:#bf616a;"> --local</span><span> status.showUntrackedFiles no‍‍‍‍‍
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">d‍tfiles config --local status.showUntrackedFiles no‍‍‍‍‍
 </span></code></pre>
 <h5 id="fyl-hy-khnfyg-rw-dfh-mykhnym">فایل های کانفیگ رو اضافه میکنیم</h5>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">dtf</span><span> add </span><span style="color:#bf616a;">~</span><span>/.config/i3
-</span><span style="color:#bf616a;">dtf</span><span> add </span><span style="color:#bf616a;">~</span><span>/.config/nvim 
-</span><span style="color:#bf616a;">dtf</span><span> add </span><span style="color:#bf616a;">~</span><span>/.zshrc 
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">dtf add ~/.config/i3
+</span><span style="color:#fdf4c1;">dtf add ~/.config/nvim 
+</span><span style="color:#fdf4c1;">dtf add ~/.zshrc 
 </span><span>
-</span><span style="color:#bf616a;">dtf</span><span> commit</span><span style="color:#bf616a;"> -m </span><span>&quot;</span><span style="color:#a3be8c;">Initial dotfiles</span><span>&quot;
+</span><span style="color:#fdf4c1;">dtf commit -m </span><span style="color:#b8bb26;">&quot;Initial dotfiles&quot;
 </span></code></pre>
 <h5 id="w-dr-akhr-push-khnyd">و در آخر push کنید</h5>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">dotfiles</span><span> remote add origin git@github.com:YOUR_USERNAME/dotfiles.git
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fdf4c1;">dotfiles remote add origin git@github.com:YOUR_USERNAME/dotfiles.git
 </span><span>
-</span><span style="color:#bf616a;">dotfiles</span><span> push</span><span style="color:#bf616a;"> -u</span><span> origin master
+</span><span style="color:#fdf4c1;">dotfiles push -u origin master
 </span></code></pre>
 <p>از اونجایی که من نمیخواستم هر دفعه <code>dtf commit</code> انجام بدم یه alias دیگه هم اضافه کردم:</p>
-<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#96b5b4;">alias </span><span style="color:#8fa1b3;">dtfpush</span><span>=&#39;</span><span style="color:#a3be8c;">dtf add -f ~/.zshrc ~/.config/i3 ~/.config/nvim &amp;&amp; dtf commit -m &quot;update dotfiles&quot; &amp;&amp; dtf push</span><span>&#39;
+<pre data-lang="zsh" style="background-color:#282828;color:#fdf4c1aa;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#fabd2f;">alias </span><span style="color:#8ec07c;">dtfpush</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&#39;dtf add -f ~/.zshrc ~/.config/i3 ~/.config/nvim &amp;&amp; dtf commit -m &quot;update dotfiles&quot; &amp;&amp; dtf push&#39;
 </span></code></pre>
 <p>الان دیگه فرق نمیکنه کجای لینوکس هستید با یه کامند <code>dtfpush</code> تمام کانفیگ ها push میشه تو گیت هاب.</p>
 <p>تفاوت اصلی با ریپوی معمولی گیت اینه که نیازی نیست هیچ فایلی رو جا به جا کنید.</p>
 <p>الان گیت از HOME$ تمام تغییراتی که اعمال میشه رو زیر نظر داره و فقط با یه کامند ساده از هرجا میتونید commit کنید و تغییراتو push کنید توی گیت هاب.</p>
 <p>و از اونجایی که من زیاد مدام در حال تغییر distro هستم برای اینکه توی یک سیستم تازه نصب شده تمام ابزارهایی که برای این کانفیگ ها نیاز به نصب دارن رو نصب کنم یه اسکریپت ساده هم اضافه کردم:</p>
 <p>bootstrap.sh:</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;">#!/usr/bin/env bash
+<pre data-lang="bash" style="background-color:#282828;color:#fdf4c1aa;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="font-style:italic;color:#928374;">#!/usr/bin/env bash
 </span><span>
-</span><span style="color:#bf616a;">sudo</span><span> pacman</span><span style="color:#bf616a;"> -Syu --needed --noconfirm
+</span><span style="color:#fdf4c1;">sudo pacman -Syu --needed --noconfirm
 </span><span>
-</span><span style="color:#bf616a;">sudo</span><span> pacman</span><span style="color:#bf616a;"> -S --needed </span><span>\
-</span><span>    tmux telegram-desktop zsh zola nodejs npm nvim \
-</span><span>    git picom obsidian okular mpv konsole obs-studio \
-</span><span>    ttf-jetbrains-mono polybar pamixer feh xorg-xrandr \
-</span><span>    i3status brightnessctl numlockx python-virtualenv python-pynvim \
-</span><span>    luarocks rust neovim 
+</span><span style="color:#fdf4c1;">sudo pacman -S --needed \
+</span><span style="color:#fdf4c1;">    tmux telegram-desktop zsh zola nodejs npm nvim \
+</span><span style="color:#fdf4c1;">    git picom obsidian okular mpv konsole obs-studio \
+</span><span style="color:#fdf4c1;">    ttf-jetbrains-mono polybar pamixer feh xorg-xrandr \
+</span><span style="color:#fdf4c1;">    i3status brightnessctl numlockx python-virtualenv python-pynvim \
+</span><span style="color:#fdf4c1;">    luarocks rust neovim 
 </span><span>    
 </span></code></pre>
 <p>این اسکریپت رو اضافه کردم به <code>dotfiles/scripts</code> و با ران کردن این اسکریپت دیگه نیازی نیست تمام ابزارهارو تکی نصب کنیم.</p>
