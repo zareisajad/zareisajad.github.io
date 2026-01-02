@@ -21,6 +21,38 @@
 </div>
 
 <div class="d-flex justify-content-between align-items-cente mb-2">
+  <a href="/blog"><h6>وبلاگ ←</h6></a>
+</div>
+
+
+<div class="d-flex flex-column gap-3 mb-3 gap-2">  
+    {% set blog_section = get_section(path="blog/_index.md") %}
+    {% for page in blog_section.pages %}
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="d-flex justify-content-between align-items-cente mb-2">
+  <a href="/notes"><h6>یادداشت ←</h6></a>
+</div>
+
+
+<div class="d-flex flex-column gap-3 mb-3 gap-2">  
+    {% set blog_section = get_section(path="notes/_index.md") %}
+    {% for page in blog_section.pages %}
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<div class="d-flex justify-content-between align-items-cente mb-2">
   <a href="/reading"><h6>مطالعه ←</h6></a>
 </div>
 
@@ -66,38 +98,6 @@
 
     {% endfor %}
 </div>
-
-<div class="d-flex justify-content-between align-items-cente mb-2">
-  <a href="/blog"><h6>وبلاگ ←</h6></a>
-</div>
-
-
-<div class="d-flex flex-column gap-3 mb-5 gap-2">  
-    {% set blog_section = get_section(path="blog/_index.md") %}
-    {% for page in blog_section.pages %}
-    <div class="d-flex justify-content-between align-items-center">
-        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-    </div>
-    {% endfor %}
-</div>
-
-<div class="d-flex justify-content-between align-items-cente mb-2">
-  <a href="/notes"><h6>یادداشت ←</h6></a>
-</div>
-
-
-<div class="d-flex flex-column gap-3 gap-2">  
-    {% set blog_section = get_section(path="notes/_index.md") %}
-    {% for page in blog_section.pages %}
-    <div class="d-flex justify-content-between align-items-center">
-        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-        <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-    </div>
-    {% endfor %}
-</div>
-
-
 
 
 
