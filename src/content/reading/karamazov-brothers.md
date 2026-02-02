@@ -1,11 +1,11 @@
 +++
 title = "برادران کارامازوف"
-date = 1404-10-07
+date = 1404-11-01
 [extra]
 type = "book"
 language = "fa"
 author = "داستایفسکی"
 pending = false
-read = false
-rate = 0
+read = true
+rate = 5
 +++
