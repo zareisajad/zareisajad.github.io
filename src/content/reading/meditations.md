@@ -6,6 +6,6 @@ type = "book"
 language = "en"
 author = "Marcus Aurlious"
 pending = false
-read = false
-rate = 0
+read = true
+rate = 4
 +++

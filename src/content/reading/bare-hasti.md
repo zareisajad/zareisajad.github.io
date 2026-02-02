@@ -1,10 +1,10 @@
 +++
-title = "Cant Hurt Me"
+title = "بار هستی"
 date = 1404-09-02
 [extra]
 type = "book"
-language = "en"
-author = "David Goggins"
+language = "fa"
+author = "میلان کوندرا"
 pending = false
 read = false
 rate = 0
