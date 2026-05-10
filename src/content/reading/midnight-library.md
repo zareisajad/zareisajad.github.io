@@ -4,7 +4,7 @@ date = 1405-01-10
 [extra]
 type = "book"
 language = "en"
-author = "Marcus Aurlious"
+author = "Matt Haig"
 pending = false
 read = true
 rate = 3
