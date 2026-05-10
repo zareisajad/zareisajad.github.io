@@ -6,6 +6,6 @@ type = "book"
 language = "fa"
 author = "میلان کوندرا"
 pending = false
-read = false
-rate = 0
+read = true
+rate = 2
 +++
